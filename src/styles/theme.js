@@ -6,8 +6,8 @@ export const theme = createMuiTheme({
         MuiCssBaseline: {
             '@global': {
                 html: {
-                    margin: 0,
-                    padding: 0,
+                    margin: 10,
+                    padding: 10,
                     fontWeight: 'inherit',
                     fontStyle: 'inherit',
                     fontSize: '100%',

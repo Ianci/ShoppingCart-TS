@@ -1,17 +1,24 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/styles';
-import { Typography } from '@material-ui/core';
+import { Button } from '@material-ui/core'
+import { CartItemType } from '../App'
+import { Wrapper } from '../styles/components/Wrapper'
 
-export const Item = () => {
-    const classes = useStyles()
-    return (
-        <div>
-           <Typography>Hola</Typography> 
+
+type Props = {
+    item: CartItemType;
+    handleAddToCart: (clickedItem: CartItemType) => void;
+  };
+
+const Item: React.FC<Props> = ({ item, handleAddToCart }) => (
+    <Wrapper>
+        <img src={item.image} alt={item.title} />
+        <div className="">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+            <h3>${item.price}</h3>
         </div>
-    )
-}
+        <Button onClick={() => handleAddToCart(item)}  variant="contained" color="primary">Add to cart</Button>
+    </Wrapper>
+);
 
 
-const useStyles = makeStyles((theme) => {
-
-})
+export default Item;
